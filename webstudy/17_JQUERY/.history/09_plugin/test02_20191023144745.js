@@ -1,4 +1,0 @@
-$.fn.comma = function () {
-    
-}
-

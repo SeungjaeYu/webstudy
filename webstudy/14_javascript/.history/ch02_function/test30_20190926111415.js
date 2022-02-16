@@ -1,7 +1,0 @@
-
-function doStart() {
-
-}
-function doClick() {
-
-}
