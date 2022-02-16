@@ -1,0 +1,26 @@
+1. 콘솔창 열기.
+ menu> Oracle 11  > Run SQL Command Line 창 열기
+ 
+2. 사용자(DBA) 로그인하기 (권한있는 사람으로 접속)
+ - conn(Connect) 아이디/패스워드
+ - conn system/admin
+ 
+3. hr계정(이미 존재하는 사용자) 해제하고 접속하기
+  - alter user [사용자아이디] identified by [설정할 패스워드] account unlock;
+  - alter user hr identified by hr account unlock;
+  
+4. 접속하기
+  conn hr/hr
+  
+   
+5. hr 사용자의 기본 제공되는 테이블(데이터) 확인하기
+  - column tname format a20; (한 화면에 보이지 않을 때 사용)   
+  - select(조회) * from tab(table);
+  
+  
+  
+  
+  
+  - dasc emplotees;
+  
+  - select emplotee_id form employees;

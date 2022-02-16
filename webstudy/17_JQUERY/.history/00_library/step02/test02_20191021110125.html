@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--
+    라이브러리에 innerHTML 추출 기능 추가하기..
+    element.html()
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery.js"></script>
+</head>
+<body>
+    <button id="btn1">설정</button>    
+    <button id="btn2">추출</button>    
+    <button id="btn3">설정 및 추출</button>    
+    <div>기본</div>
+    <div>기본</div>
+    <div>기본</div>
+    <div>기본</div>
+    <div>기본</div>
+    <script>
+        $("#btn1")[0].addEventListener("click", (e) => {
+            $("div").html("변경된 내용");
+        });
+        $("#btn2")[0].addEventListener("click", (e) => {
+            alert($("div").html());
+        });
+        $("#btn3")[0].addEventListener("click", (e) => {
+            /*
+            $("div").html("변경된 내용");
+            alert($("div").html());
+            */
+           /*
+           $div = $("div");
+           $div.html("변경된 내용");
+           alert($div.html());
+           */
+
+           alert($("div".html("변경된 내용").html()));
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

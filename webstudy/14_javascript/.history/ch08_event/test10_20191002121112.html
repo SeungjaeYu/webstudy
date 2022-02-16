@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h2>키 이벤트 활용하기</h2>
+    <div>
+        <input type="text" id="msg1"/><span>6글자만 입력(한글문제)</span>
+    </div>
+    <script>
+        let msg1 = document.querySelector("#msg1");
+        msg1.addEventListener("keydown", (e) => {
+            let ele = e.target;
+            console.log(ele.);
+            e.preventDefault();
+        });
+    </script>
+</body>
+</html>

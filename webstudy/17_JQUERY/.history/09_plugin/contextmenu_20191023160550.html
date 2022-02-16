@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>이벤트</title>
+	<meta charset="utf-8">
+    <style>
+        div {
+            margin: 10px; padding: 5px;
+            border: 3px solid black;
+            height: 200px;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    <!-- <div>마우스 오른쪽 클릭</div> -->
+    <input type="text" size="100"/>
+    <script>
+        $(document).on("contextmenu", (e) => {
+            alert("이 컨텐트는 불펌 금지합니다.");
+            e.preventDefault();
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

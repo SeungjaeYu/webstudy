@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+    select 박스의 option의 동적 생성 및 삭제하기
+
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <div>
+            <button type="button" onclick="doAdd()">추가</button>
+            <button type="button" onclick="doDel()">삭제</button>
+        </div>
+        <div>
+            <select name="sel">
+                <option value="">선택</option>
+            </select>
+        </div>
+    </form>
+
+    <script>
+        function doAdd() {
+            // 1. dom api 사용하기
+            let opt = document.createElement("option"); // <option></option>
+            opt.value = 0;  //  <option value="0"></option>
+            document.creatText
+        }
+
+        function doDel() {
+
+        }
+    </script>
+</body>
+</html>

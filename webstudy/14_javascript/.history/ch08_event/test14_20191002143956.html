@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h2>이미지를 드레그 하세요</h2>
+    <img id="img1" src="test1.jpg" width="150" height="120" draggable="true" />
+
+    <script>
+        let img2 = document.querySelector("#img2");
+        // img2.ondragstart = function () {} ;
+        img2.addEventListener("dragstart", (e) => {
+            console.log("드레그 시작");
+        });
+        img2.addEventListener("drag", (e) => {  // mousemove
+            console.log("드레그중");
+        });
+    </script>    
+</body>
+</html>

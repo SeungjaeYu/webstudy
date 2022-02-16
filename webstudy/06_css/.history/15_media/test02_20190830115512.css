@@ -1,0 +1,23 @@
+body {
+    background: white;
+}
+
+.container > div:nth-child(1) { background: #cc6767; }
+.container > div:nth-child(2) { background: #5fd8aa; }
+
+
+@media (max-width: 800px) {
+    .container {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 300px;
+    }
+}
+
+@media (min-width: 801px) {
+    .container > div {
+        height: 200px;
+        .container > div:nth-child(1) { background: #dedede; }
+        .container > div:nth-child(2) { background: #3011bd; }
+    }
+}

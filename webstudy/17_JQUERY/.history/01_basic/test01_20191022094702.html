@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<!-- 라이브러리 충돌... -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        let $ = function (msg) {
+            alert(msg);
+        };
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("div").html("변경");
+        });
+        console.log($);
+    </script>
+</head>
+<body>
+    <div>테스트</div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!-- 라이브러리 충돌... -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    <div>
+    	<input type="text" id="msg" />
+    	<button>호출</button>
+    </div>
+    <div id="result"></div>
+    <script>
+    	$(document)
+    	.ajaxStart(() => { console.log("ajaxStart") })
+    	.ajaxStop(() => { console.log("ajaxStop") });
+    	$("button").click(() => {
+    		
+    		$.ajax({
+    			url: "/18_jquery_ajax/basic/test01.do",
+    			data: {msg: $("#msg").val()},
+    			success: (result) => { console.log(result) }
+    		});
+    		$.ajax({
+    			url: "/18_jquery_ajax/basic/test02.do",
+    			data: {msg: $("#msg").val()},
+    			dataType: "json",
+    			success: (result) => { console.log(result.msg, result.code) }
+    		});
+    	});
+    </script>
+</body>
+</html>

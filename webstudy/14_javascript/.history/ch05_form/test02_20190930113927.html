@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!--
+    checkbox 처리
+
+    체크박스 체크 상태 : 체크박스객체.checked (true : 체크, false : 해제)
+    체크 상태 설정 : 체크박스객체.checked = true; 체크박스객체.checked = false;
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form name="mForm">
+        <button type="button" onclick="chk();">확인</button>
+        <button type="button" onclick="chkCount();">체크된 개수</button>
+        <div>
+            <input type="checkbox" id = "all" name="all" value = "all"
+                   onclick="doCheck()"/>
+            <label for="all">전체</label>
+            <span id="cnt"></span>
+        </div>
+        <div>
+            <input type="checkbox" id = "menu1" name="menu" value = "1" />
+            <label for="menu1">양식</label>
+            <input type="checkbox" id = "menu2" name="menu" value = "2" />
+            <label for="menu2">한식</label>
+            <input type="checkbox" id = "menu3" name="menu" value = "3" />
+            <label for="menu3">중식</label>
+            <input type="checkbox" id = "menu4" name="menu" value = "4" />
+            <label for="menu4">분식</label>
+        </div>
+
+
+
+    </form>
+</body>
+
+<script>
+    function chkCount() {
+        let f = document.mForm;
+        let menu = f.menu;
+        if (menu.length) {
+            for (let i = 0; i < menu.length; i++) {
+                menu[i].checked = f.all.checked;
+            }
+        }
+    }
+
+    function doCheck() {
+        console.log("체크...");
+        let f = document.mForm;
+        let menu = f.menu;
+        if (menu.length) {
+            for (let i = 0; i < menu.length; i++) {
+                menu[i].checked = f.all.checked;
+            }
+        }
+    }
+
+    function chk() {
+        console.log("함수 호출 성공");
+        let f = document.mForm;
+        let menu = f.menu;
+        // console.log(f.all.checked);
+       // 하나일 경우와 여러개의 경우의 코딩을 분리해야 한다. 
+       console.log(menu.length);
+       // 여러개 일 경우
+       if (menu.length) {
+            for (let i = 0; i < menu.length; i++) {
+                console.log(menu[i].checked);
+            }
+       } else {
+           console.log(menu.checked);
+       }
+
+    }
+</script>
+</html>

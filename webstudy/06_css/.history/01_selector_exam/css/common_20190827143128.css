@@ -1,0 +1,68 @@
+@charset "utf-8";
+@import url("reset.css");
+@import url("layout.css");
+
+/* common */
+.hide {position:absolute; left:-9999px; width:0; height:0; font-size:0; line-height:0; margin:0; padding:0; overflow:hidden; visibility:hidden}
+.tbl_search_top {width:100%; height:22px; overflow:hidden}
+.tbl_search_top .total {float:left; padding:9px 0 0; color:#6f6f6f}
+.tbl_search_top .total em {font-style:normal; color:#c90a11}
+.sch_box * {float:left; line-height:21px; margin-left:5px; color:#776968}
+.sch_box .sct {height:22px; padding:2px; line-height:16px}
+.sch_box .inp_txt {width:194px; height:20px}
+
+/* float */
+.fR {float:right !important}
+
+/* button */
+.button {display:inline-block; height:32px; padding-left:1px}
+.button * {vertical-align:middle}
+.button span {display:block; height:32px; line-height:32px; margin-left:1px; padding:0 20px; color:#f6f6f4; .cursor:pointer}
+.button._longtxt span {width:90px; padding:0 12px}
+.bt_red {background:url('../images/btn_red.gif') no-repeat 0 0}
+.bt_red span {background:url('../images/btn_red.gif') no-repeat 100% 0}
+.bt_gray {background:url('../images/btn_gray.gif') no-repeat 0 0}
+.bt_gray span {background:url('../images/btn_gray.gif') no-repeat 100% 0}
+.button1 {display:inline-block; padding:6px 20px; border-radius:1px; border-top:1px solid #cacac3; border-right:1px solid #9e9e92; border-bottom:1px solid #9e9e92; border-left:1px solid #cacac3; background:#f6f6f4 url('../images/bg_btnArr.gif') no-repeat 100% 100%}
+.button1.small {padding:3px 20px}
+.bt_grad {display:inline-block; height:20px; line-height:20px; font-family:'돋움'; font-size:11px; padding:0 12px; border:1px solid #b0b0b0}
+.bt_grad._g {border:1px solid #b0b0b0; background:url('../images/btn_bgG.gif') repeat-x 0 100%}
+.bt_grad._w {font-size:12px; font-weight:bold; border:1px solid #bbb; background:#fff url('../images/btn_bgW.gif') repeat-x 0 100%}
+.bt_grad._cR {color:#c90a11}
+input.bt_grad {height:22px; letter-spacing:-0.1em; color:#666; line-height:18px; padding:0 3px}
+
+/* webzine style */
+.tbl_webzine li {height:144px; margin-top:60px}
+.tbl_webzine .thumb {position:relative; display:block; float:left; width:198px; height:142px; border:1px solid #deded7; overflow:hidden; background:url('../images/bg_noImg_m.gif') no-repeat -1px -1px}
+.tbl_webzine .thumb img {margin:-1px 0 0 -1px; width:200px; height:144px}
+.tbl_webzine .mask {position:absolute; bottom:0; left:0; display:inline-block; width:100%; height:34px; background:#000; filter:alpha(opacity=40); opacity:0.4}
+.tbl_webzine .tit {position:absolute; bottom:10px; left:0; display:inline-block; width:180px; padding:0 9px; line-height:1.1em; font-weight:bold; text-align:center; overflow:hidden; color:#fff}
+.tbl_webzine .bot4 {bottom:4px}
+.tbl_webzine .opt {overflow:hidden}
+.tbl_webzine .opt .btn_more {font-weight:bold; color:#c90a11}
+.tbl_webzine .d-lst {float:left; width:480px; margin-left:20px}
+.tbl_webzine .d-lst h3 {font-family:'Times New Roman'; margin:0; padding-bottom:14px; border-bottom:1px solid #deded7}
+.tbl_webzine .d-tem {margin:10px 0}
+.tbl_webzine .d-tem strong {color:#444}
+.tbl_webzine .d-tem a {display:inline-block; margin-top:8px}
+.tbl_webzine .d-tem .opt .date {margin-left:15px; padding-left:16px; background:url('../images/txt_bar.gif') no-repeat 0 50%}
+.tbl_webzine .d-lst a:hover, .tbl_webzine .d-lst a:focus, .tbl_webzine .d-lst a:active {text-decoration:underline}
+.tbl_webzine li:first-child {margin-top:30px}
+
+/* 서브타이틀 */
+[class 속성이 sub_title 인 엘리먼트] {height:40px; margin-bottom:40px}
+[class 속성이 sub_title 인 엘리먼트의 자손 h2] {font-size:26px; font-weight:bold; line-height:.8em; color:#000}
+[class 속성이 location 인 엘리먼트] {padding:7px 0 0; color:#979797}
+[class 속성이 sub 인 엘리먼트의 자손 엘리먼트 중에서 class 속성이 content_body 인 엘리먼트의 자손 중에서 h3 엘리먼트] {font-size:20px; font-style:normal; margin:50px 0 11px; color:#25211f}
+[class 속성이 sub 인 엘리먼트의 자손 엘리먼트 중에서 class 속성이 content_body 인 엘리먼트의 자손 중에서 첫번째 자식 h3 엘리먼트, class 속성이 sub 인 엘리먼트의 자손 엘리먼트 중에서 class 속성이 content_body 인 엘리먼트의 자손 중에서 class 속성이 tab_menu인 엘리먼트의 다음 h3 엘리먼트] {margin-top:0}
+
+/* pagination */
+[class 속성이 pagination 인 엘리먼트] {width:100%; height:28px; text-align:center; padding-top:40px}
+[class 속성이 pagination 인 엘리먼트의 자손 div] {display:inline-block; text-align:center}
+[class 속성이 pagination 인 엘리먼트의 자손 a] {float:left; display:block; width:26px; height:26px; line-height:26px; border:1px solid #d1d3c6; font-weight:bold; text-align:center; margin-left:5px; background:url('../images/btn_paginate.gif') no-repeat -1px -1px}
+[class 속성이 pagination 인 엘리먼트의 자손 a 엘리먼트 중에서 클래스 속성이 first] {background-position:-1px -57px; margin:0}
+[class 속성이 pagination 인 엘리먼트의 자손 a 엘리먼트 중에서 클래스 속성이 prev] {background-position:-1px -85px}
+[class 속성이 pagination 인 엘리먼트의 자손 a 엘리먼트 중에서 클래스 속성이 next] {background-position:-1px -113px}
+[class 속성이 pagination 인 엘리먼트의 자손 a 엘리먼트 중에서 클래스 속성이 last] {background-position:-1px -141px}
+[, class 속성이 pagination 인 엘리먼트의 자손 a 엘리먼트에 마우스를 올렸을때, class 속성이 pagination 인 엘리먼트의 자손 a 엘리먼트에 포커스 왔을때, class 속성이 pagination 인 엘리먼트의 자손 a 엘리먼트에 누르고 있을때].pagination a:hover, .pagination a:focus, .pagination a:active {border:1px solid #c90a11; color:#c90a11}
+[class 속성이 pagination 인 엘리먼트의 자손 a 엘리먼트 중에서 클래스 속성이 on] {border:1px solid #c90a11;  color:#c90a11}

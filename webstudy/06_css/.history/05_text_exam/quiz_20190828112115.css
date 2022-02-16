@@ -1,0 +1,42 @@
+* {
+    margin: 0px; padding: 0px;
+}
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Jua', sans-serif;
+    font-size: 12px;
+}
+
+a {
+    font-size: 2em;
+    background-color: black;
+    color: yellow;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: unde
+}
+
+
+<!--
+	조건
+    1. 문서의 기본 텍스트로 구글 폰트에 있는 "Jua" 를 활용
+       - body 태그의 폰트를 "Jua"로 지정
+       - 글자크기를 12px로 지정
+    2. 텍스트 링크 지정
+       - a 태그의 글자 크기를 2배로 지정
+       - 배경색으로 검정을 텍스트의 색상은 노란색을 지정
+       - 링크의 밑줄은 없앤 상태로 만듭니다.
+    3. 링크에 마우스를 올렸을 때 
+       - 텍스트에 밑줄이 보이도록 하고 
+       - 배경색을 빨간색으로 텍스트의 색상은 하얀색으로 지정
+       - 글자 크기를 3배로 지정
+    4. 문서의 배경 이미지 지정
+       - 배경 이미지로 quiz.jpg를 지정 
+       - 배경 이미지는 반복하지 않습니다.
+       - 배경 이미지를 화면 하단의 오른쪽에 위치시킵니다.  
+-->

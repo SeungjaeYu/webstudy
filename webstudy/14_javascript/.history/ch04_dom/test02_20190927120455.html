@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="doAdd();"></button>
+    <div id="list"></div>
+    <script>
+        function doAdd() {
+            // <img src="test1.jpg" width="200" height="100" />
+            // 태그 생성하기 : <img />
+            let imgEle = document.createElement("img");
+
+            // 생성된 태그에 속성 추가
+            imgEle.src = "test1.jpg";
+            imgEle.width = 200;
+            imgEle.height = 100;        // 메모리에서만 만든 것임
+            
+            // 아이디가 list인 엘리먼트에 생성된 imgEle 엘리먼트를 자식으로 추가
+            
+
+        };
+    </script>
+</body>
+</html>

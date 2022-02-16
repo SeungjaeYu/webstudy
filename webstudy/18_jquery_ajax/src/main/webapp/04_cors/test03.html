@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!-- 라이브러리 충돌... -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    <div>
+    	<button>호출</button>
+    </div>
+    <div id="result"></div>
+    <script>
+		console.log("location.origin", location.origin);		
+		
+		// origin 문제 확인하기
+		// localhost:9080 서버에 데이터를 요청 : 서로다른 origin 일 경우의 문제 확인하자..
+		$("button").click(() => {
+			$.ajax({
+				url: "http://localhost:9080/18_jquery_apiserver/cors/test02.do",
+				success: (result) => $("#result").html(result)
+			});
+		});
+    </script>
+</body>
+</html>

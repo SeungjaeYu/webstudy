@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!-- 
+	가상 위치 선택자
+	형식 :  
+	:first-child        : 부모의 첫번째 자식일 경우 가능(타입 상관 없음)
+	:last-child         : 부모의 마지막 자식일 경우 가능(타입 상관 없음)
+
+	:first-of-type : 부모의 자식중에서 첫번째 일 경우(같은 타입 대상)
+	:last-of-type  : 부모의 자식중에서 마지막 일 경우(같은 타입 대상)
+ -->
+<html>
+<head>
+<meta charset="utf-8" />
+<title> 속성 선택 스타일 </title>
+<style type="text/css">
+
+</style>                        
+</head>
+<body>
+	<p>주의사항</p> 
+	<h1>body 바로 밑의  h1</h1>
+	<div>
+		<h1>1</h1>
+	    <h1>2</h1>
+	    <h1>3</h1>
+    </div>
+    <div>
+		<h1>4</h1>
+	    <h1>5</h1>
+	    <h1>6</h1>
+    </div>
+	<h1>body 바로 밑의  맨 마지막 h1</h1>
+    <p><div><h1>주의</h1><h1>사항</h1></div></p>
+</body>
+</html>

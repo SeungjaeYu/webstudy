@@ -1,0 +1,10 @@
+@CHARSET "UTF-8";
+div.bottom {
+	color: white;
+	background: #444;
+	text-align: center;
+}
+
+div.content {
+	min-height: 500px;
+}

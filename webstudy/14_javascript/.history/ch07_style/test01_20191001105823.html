@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h2 onclick="changeCss();">CSS 적용하기</h2>
+    <script>
+        function changeCss() {
+            let h2Ele = document.querySelector("h2");
+            h2Ele.style.border = "2px solid black"; // style에 속성이 많으므로 style.속성 접근해야 함.     
+            h2Ele.style.background = "#345";
+            h2Ele.style.color = "white";
+            h2Ele.style.margin = "30px";
+            h2Ele.style.padding = "30px";
+            h2Ele.style.height = "100px";
+            h2Ele.style.textAlign = "center";
+            h2Ele.style.textAlign = "center";
+        };
+    </script>
+</body>
+</html>

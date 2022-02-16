@@ -1,0 +1,22 @@
+* {box-sizing: border-box;}
+
+.wrapper {   
+    width: 1000px;
+    margin: 40px auto;            
+
+    border: 1px solid #f76707;
+    background-color: #fff4e6;
+}
+
+.wrapper > div {  
+    padding: 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.wrapper > div:nth-child(5n + 1) { background-color: #882e2e; }
+.wrapper > div:nth-child(5n + 2) { background-color: #3dd8d0; }
+.wrapper > div:nth-child(5n + 3) { background-color: #f88f0f; }
+.wrapper > div:nth-child(5n + 4) { background-color: #1d887a; }
+.wrapper > div:nth-child(5n + 5) { background-color: #8b33f0; }

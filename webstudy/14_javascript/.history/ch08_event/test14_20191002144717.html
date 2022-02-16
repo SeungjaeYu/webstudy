@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #dropzone {
+            width: 600px;
+            height: 200px;
+            border: 3px solid tomato;
+        }
+    </style>
+</head>
+<body>
+    <h2>이미지를 드레그 하세요</h2>
+    <img id="img1" src="test1.jpg" width="150" height="120" draggable="true" />
+    <div id="dropzone" on></div>
+    <script>
+        let img1 = document.querySelector("#img1");
+        img1.addEventListener("dragstart", (e) => {
+            console.log("드레그 시작");
+        });
+
+        let dropzone = document.querySelector("#dropzone");
+        dropzone.addEventListener("dragenter", (e) => {
+
+            console.log("드랍존에 들어왔음..");
+        });    // dropzone 영역에 들어왔다는 의미
+
+        dropzone.addEventListener("dragleave", (e) => {
+            console.log("드랍존에서 빠져나감..");
+        });    // dropzone 영역에 들어왔다는 의미
+
+        dropzone.addEventListener("drop", (e) => {
+            console.log("드랍됨..");
+        });    // dropzone 영역에 들어왔다는 의미
+
+    </script>    
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	.red {
+		color: red;
+	}
+</style>
+</head>
+<body>
+	<h2>회원가입</h2>
+	<hr />
+	<div>
+		<label for="id">아이디</label>
+		<input id="id" type="text" size="20" />
+		<span id="result"></span>
+	</div>
+	
+	<script>
+		let idEle = document.getElementById("id");
+		idEle.addEventListener("blur", (e) => {
+			let xhr = new XMLHttpRequest();
+			xhr.onreadystatechange = () => {
+				if (xhr.readyState == 4) {
+					if (xhr.status == 200) {
+						let result = document.getElementById("result");
+						result.classList.remove("red");
+						let html = "";
+						if (xhr.responseText == 0) {
+							html = "사용 가능한 아이디 입니다.";
+						} else {
+							html = "사용중인 아이디 입니다.";
+							result.classList.add("red");
+						}
+						result.innerHTML = html;
+					}
+				}	
+			};
+			xhr.open("GET", "test06.do?id=" + idEle.value, true);
+			xhr.send();
+// 			test06.do?id=idEle.value;
+		});
+		
+		
+	</script>
+	
+</body>
+</html>

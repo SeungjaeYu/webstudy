@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	table { width: 300px; }
+	table, td {
+		border: 1px solid black;
+	}
+</style>
+</head>
+<body>
+	<h2>Ajax - 서블릿 통신</h2>
+	<button id="btn">클릭</button>
+	<hr>
+	<div id="result"></div>
+	
+	<script>
+		let btn = document.querySelector("#btn");
+		btn.addEventListener("click", (e) => {
+			let xhr = new XMLHttpRequest();
+			// 콜백 함수 등록 먼저 해준다.
+			xhr.onreadystatechange = () => {
+				if (xhr.readyState == 4) {
+					if (xhr.status == 200) {
+						let result = document.querySelector("#result");
+						let names = xhr.responseText.split(",");
+						result.innerHTML = xhr.responseText;
+						let html = "<table>"
+						for(let i = 0; i < names.length; i++) {
+							
+							html += `<tr><td>${names[i]}</td></tr>`;
+						}
+						html += "</table>";
+						
+						html += "<ul>"
+						for(let i = 0; i < names.length; i++) {
+							
+							html += `<li>${names[i]}</li>`;
+						}
+						html += "</ul>";
+						
+						html += "<select>"
+						for(let i = 0; i < names.length; i++) {
+							
+							html += `<option>${names[i]}</option>`;
+						}
+						html += "</select>";
+						
+						result.innerHTML = html;
+					}
+				}
+			};
+			
+			xhr.open("GET", "test03.do", true);
+			xhr.send();
+		});
+	
+		
+		
+		
+		
+	</script>
+	
+</body>
+</html>

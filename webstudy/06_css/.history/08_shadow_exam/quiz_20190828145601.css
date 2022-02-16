@@ -1,0 +1,10 @@
+.card {
+    width: 250px;
+    height: 300px;
+}
+.card__thumb {
+    display: inline;
+}
+.card__body {
+    display: inline;
+}

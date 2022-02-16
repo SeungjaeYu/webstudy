@@ -1,0 +1,15 @@
+.container {
+    background-color: #0079BF;
+    
+}
+h2 {
+    color: white;
+}
+ul {
+    
+    list-style: none;
+}
+li {
+    color: white;
+    display: inline-block;
+}

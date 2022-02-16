@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> float 변경 </title>
+	<meta charset="utf-8" />
+	<style type="text/css">
+		* {
+			margin: 0; padding: 0;
+			box-sizing: border-box;	
+		}
+		body {
+			font-size: 50px;
+		}
+		.container {
+			width: 1000px;
+			margin: 30px auto;
+			background: #fff4e6;
+		}
+		h2 {
+			font-size: 1em;
+		}
+		header, footer{
+			width: 1000px;
+			height: 100px;
+			border: 2px solid rosybrown;
+		}
+		.content{
+			width: 800px;
+			border: 2px solid rosybrown;
+			min-height: 500px;
+			float: left;			
+		}
+		aside{
+			border: 2px solid rosybrown;
+			width: 200px; 
+			min-height: 200px;
+			float: right;
+		}
+		footer {
+			clear: both;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h2>float를 이용한 레이아웃</h2>
+		<header>header</header>
+		<div class="content">content</div>
+		<aside>side</aside>
+		<footer>footer</footer>
+    </div>
+</body>
+</html>

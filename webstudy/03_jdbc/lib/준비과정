@@ -1,0 +1,8 @@
+프로젝트에 오라클 드라이버 인식과정
+1. 드라이버 파일을 가져오기
+ c> orclexe > app > oracle >product > 11.2.0> server > jdbc > lib > ojdbc6을 복사  
+2. 이클립스 jdbc 에 lib 이라는 폴더를 만들어서 붙여넣는다 
+or oracle에서 다운받는다 (jdbc driver)로 검색
+
+--인식하는 과정 
+1. 프로젝트 마우스 오른쪽 > 프로퍼티스 > 자바 빌드 패스 > 라이브러리 > add jars > 복사해온 jar파일 선택 > apply 

@@ -1,0 +1,33 @@
+- 태그 라이브러리 사용하기
+	
+- main.jsp 수정
+
+1. main.jsp 수정
+
+	taglib 추가하기
+  	<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+ 
+ 
+2. 정보추출 :  principal - 현재 사용자 정보(SecurityUser)
+	<h2>메인페이지</h2>
+	<sec:authorize access="isAnonymous()">
+		<a href="<c:url value="/security/login-form.do" />">로그인</a>		
+	</sec:authorize>
+	<sec:authorize access="isAuthenticated()">
+		<div>principal : <sec:authentication property="principal"/></div>
+		<div><sec:authentication property="principal.member"/></div>
+		<div><sec:authentication property="principal.member.name"/></div>
+		<div><sec:authentication property="principal.member.authList"/></div>
+
+		<sec:authentication property="principal.member" var="m" />
+		<div>${m}</div>
+		<div>${m.name}</div>
+		<div>${m.authList}</div>
+		<c:forEach var="a" items="${m.authList}">
+			<div>${a.auth}</div>
+		</c:forEach>
+		<a href="<c:url value="/security/logout.do" />">로그아웃</a>
+	</sec:authorize>  
+	
+
+3. 테스트 진행하기	

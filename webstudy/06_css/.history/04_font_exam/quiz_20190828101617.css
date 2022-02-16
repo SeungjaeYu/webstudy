@@ -1,0 +1,18 @@
+body * {
+    margin: 20px;
+    font-family: sans-serif;
+    font-size: 30px;
+}
+
+.one { font-family: monospace;  }
+.two { }
+
+.three{ font: italic bold }
+<!--
+    적용하기
+
+    1. 문서 전체에 sans-serif 글자체와 글자의 크기를 30px로 적용한다.
+    2. 클래스 속성이 "one" 인 엘리먼트에 monospace font-family 를 적용한다.
+    2. 클래스 속성이 "two" 인 엘리먼트에 웹폰트(Lexend Giga)를 검색하여 적용한다. 
+    3. 클래스 속성이 "three" 인 엘리먼트에 기울림 스타일을 적용하고 글자의 두께를 bold로 설정 
+-->

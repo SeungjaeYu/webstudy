@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!-- 
+    엘리먼트 위치 지정하기
+    position 속성의 값을 지정
+    absolute 절대좌표 지정시 사용함
+    top, left, right, bottom으로 위치를 지정
+
+    - absolute 일 경우 상위 부모의 position이 absolute, relative, 
+        fixed 인 엘리먼트를 찾아서 기준으로 삼는다.
+    - 상위 부모중에서 해당하는 것을 못찾았을 경우 html이 적용된다.
+-->
+<html>
+<head>
+<title> position </title>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="./01_position.css">
+<style type="text/css">
+
+    body {
+        position: relative;
+        }
+    .parent{
+        position: relative;
+    }
+    .parent div{
+        position: absolute;
+    }
+    .pos1{
+        top:0px;
+        right:0px;
+    }
+    .pos2{
+        top: 0px;
+        right:50px;
+    }
+    
+</style>
+</head>
+<body>
+    <h1>위</h1>
+    <div class="parent">
+        <div class="pos1">1</div>
+        <div class="pos2">2</div>
+        <div class="pos3">3</div>
+    </div>
+    <h1>아래</h1>
+</body>
+</html>
+
+
+
+
+
+
+

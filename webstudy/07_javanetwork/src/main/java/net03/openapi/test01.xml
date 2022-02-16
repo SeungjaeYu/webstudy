@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+	<channel>
+		<title>Naver Open API - movie ::'4'</title>
+		<link>https://search.naver.com</link>
+		<description>Naver Search Result</description>
+		<lastBuildDate>Mon, 02 Sep 2019 16:37:32 +0900</lastBuildDate>
+		<total>26</total>
+		<start>1</start>
+		<display>3</display>
+		<item>
+			<title>인시디어스&lt;b&gt;4&lt;/b&gt;: 라스트 키</title>
+			<link>https://movie.naver.com/movie/bi/mi/basic.nhn?code=158647
+			</link>
+			<image>https://ssl.pstatic.net/imgmovie/mdi/mit110/1586/158647_P10_112604.jpg
+			</image>
+			<subtitle>Insidious: The Last Key</subtitle>
+			<pubDate>2017</pubDate>
+			<director>애덤 로비텔|</director>
+			<actor>스펜서 로크|린 샤예|조쉬 스튜어트|하비에르 보텟|</actor>
+			<userRating>6.82</userRating>
+		</item>
+		<item>
+			<title>파라노말 액티비티 &lt;b&gt;4&lt;/b&gt;</title>
+			<link>https://movie.naver.com/movie/bi/mi/basic.nhn?code=92131</link>
+			<image>https://ssl.pstatic.net/imgmovie/mdi/mit110/0921/92131_P02_134330.jpg
+			</image>
+			<subtitle>Paranormal Activity&lt;b&gt;4&lt;/b&gt;</subtitle>
+			<pubDate>2012</pubDate>
+			<director>아리엘 슐만|헨리 유스트|</director>
+			<actor>케이티 피더스턴|캐서린 뉴튼|브래디 알렌|맷 쉬블리|</actor>
+			<userRating>5.06</userRating>
+		</item>
+		<item>
+			<title>스크림 &lt;b&gt;4&lt;/b&gt;G</title>
+			<link>https://movie.naver.com/movie/bi/mi/basic.nhn?code=74832</link>
+			<image>https://ssl.pstatic.net/imgmovie/mdi/mit110/0748/74832_P26_154650.jpg
+			</image>
+			<subtitle>Scream &lt;b&gt;4&lt;/b&gt;</subtitle>
+			<pubDate>2011</pubDate>
+			<director>웨스 크레이븐|</director>
+			<actor>니브 캠벨|커트니 콕스|데이빗 아퀘트|엠마 로버츠|헤이든 파네티어|루시 헤일|</actor>
+			<userRating>5.85</userRating>
+		</item>
+	</channel>
+</rss>

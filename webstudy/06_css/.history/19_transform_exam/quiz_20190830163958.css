@@ -1,0 +1,22 @@
+body {
+    background-color: darkgrey;
+}
+
+.sticky {
+    
+    width: 100px;
+    height: 100px;
+}
+li {
+    list-style: none;
+}
+ul > li:nth-child(3n + 1) {
+    background-color: #fcfbcd;
+}
+ul > li:nth-child(3n + 2) {
+    background-color: #da3ed2;
+}
+ul > li:nth-child(3n) {
+    background-color: #af3ca9;
+}
+

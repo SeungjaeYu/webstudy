@@ -1,0 +1,7 @@
+모듈 시스템
+
+- NodeJS에서 사용하는 CommonJS
+  : 정의
+    module.exports 객체 등록
+  : require("모듈")
+  

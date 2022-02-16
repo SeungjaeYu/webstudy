@@ -1,0 +1,98 @@
+<!--
+    Dom 관련 퀴즈 - 1
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="list">
+       
+    </div>
+    <ul>
+       <li>
+        <a href="#" onclick="doAdd(1)">문자열 박스 생성</a>
+      </li> 
+      <li>
+        <a href="#" onclick="doAdd(2)">비밀번호 박스 생성</a>
+    </li>
+        <li>
+        <a href="#" onclick="doAdd(3)">체크 박스 생성</a>
+    </li>  
+        <li><a href="#" onclick="doAdd(4)">라디오 버튼 생성</a>
+            
+        <a href="#" onclick="doAdd(5)">버튼 생성</a>
+        <a href="#" onclick="doAdd(6)">콤보 박스 생성</a>
+    </ul>
+
+    <script>
+        function doAdd(comm) {
+            let selEle = document.createElement("input");
+            let divEle = document.createElement("div");
+            let txtNode;
+            let i = 0;
+
+            switch(comm) {
+                case 1:
+                txtNode = document.createTextNode("문자열:");
+                divEle.append(txtNode);
+                selEle.setAttribute("type", "text");
+                divEle.append(selEle);
+               
+                document.querySelector("#list").append(divEle);
+                    break;
+                case 2:
+                txtNode = document.createTextNode("비밀번호:");
+                divEle.append(txtNode);
+                selEle.setAttribute("type", "password");
+                divEle.append(selEle);
+               
+                document.querySelector("#list").append(divEle);  
+                    break;
+                case 3:
+                txtNode = document.createTextNode("체크박스:");
+                divEle.append(txtNode);
+                selEle.setAttribute("type", "checkbox");
+                divEle.append(selEle);
+               
+                document.querySelector("#list").append(divEle);
+                    break;
+                case 4:
+                txtNode = document.createTextNode("라디오버튼:");
+                divEle.append(txtNode);
+                selEle.setAttribute("type", "radio");
+                divEle.append(selEle);
+               
+                document.querySelector("#list").append(divEle);
+                    break;
+                case 5:
+                txtNode = document.createTextNode("버튼:");
+                divEle.append(txtNode);
+                selEle.setAttribute("type", "button");
+                
+                divEle.append(selEle);
+               
+                document.querySelector("#list").append(divEle);
+                    break;
+                case 6:
+
+                let selEle1 = document.createElement("select");
+                txtNode = document.createTextNode("콤보 박스:");
+                divEle.append(txtNode);
+                selEle1.setAttribute("value", "zzzz");
+                divEle.append(selEle1);
+                
+                document.querySelector("#list").append(divEle);
+                
+                    break;
+
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <button onclick="doStart()">시작</button>
+        <button onclick="doStop()">중지</button>
+    </div>
+    <div id="timeDiv">시작 버튼을 클릭하세요</div>
+    <script>
+        let id;
+        function doStart() {
+            alert("시작버튼 클릭");
+            id = setTimeout(doStart, 1000);
+        }
+        function doStop() {
+            alert("중지버튼 클릭");
+            
+        }
+        // document.getElementById
+    </script>
+
+</body>
+</html>

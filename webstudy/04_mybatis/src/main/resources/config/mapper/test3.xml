@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 독타입.. 중복이여서는 안된다 -->
+<!--파일을 고유하게 이름짓는 것 namespace testMapper1의 이름을 줘야한다 패키지명 같이 줘야한다  -->
+<mapper namespace="kr.co.mlec.dao.TestMapper3">
+	
+<!-- 	게시물 번호 -->
+	<select id="selectBoardNo" resultType="int">
+	   select s_mybatis_board_no.nextval
+	    from  dual
+	</select>
+	
+	
+	<!-- 게시글 -->
+	<insert id="insertBoard1" parameterType="Board">
+	   insert into tb_mybatis_board(
+	       no, title, writer, content
+	   ) values (
+           	   #{no}, #{title}, #{writer}, #{content}
+	   )
+	</insert>
+	
+	<!-- 게시글에 묶인 파일을 올릴 -->
+	<insert id="insertFile" parameterType="File">
+	    insert into tb_mybatis_file (
+	       file_no, no, file_name, file_size
+	    ) values (
+	       s_mybatis_file_no.nextval, #{no}, #{fileName}, #{fileSize}
+	    )
+	</insert>
+
+
+	<!--별도의 태그로 만들지 않고 내부적으로 처리 -->
+	<insert id="insertBoard2" parameterType="Board">
+		<selectKey keyProperty="no" resultType="int" order="BEFORE">
+			select
+			s_mybatis_board_no.nextval
+			from dual
+		</selectKey>
+		insert into tb_mybatis_board(
+		no, title, writer, content
+		) values (
+		#{no}, #{title}, #{writer}, #{content}
+		)
+	</insert>
+	<resultMap type="Member" id="memberMap">
+           <result column="id" property = "id" />
+           <result column="name" property = "name" />
+           <result column="addr" property = "addr" />
+           <result column="email" property = "email" />
+           <result column="join_date" property = "joinDate" />
+           <association property="account" column="id" select="selectMemberAccountById"></association>
+    </resultMap>
+    
+    <resultMap type="Account" id="accountMap">
+     <result column="id" property="id"/>
+     <result column="money" property="money"/>
+     <result column="open_date" property="openDate"/>
+   </resultMap>
+	
+
+	<select id="selectMemberList" resultMap="memberMap">
+	  select *
+	    from tb_mybatis_member
+	   order by id 
+	</select>
+	
+	
+    
+	<select id="selectMemberAccountById" parameterType="string" resultMap="accountMap">
+	  select *
+	    from tb_mybatis_account
+	   where id = #{id} 
+	
+	</select>
+	
+	
+	
+	<!-- 게시물과 댓글의 관계가   1 : 다의 관계 -->
+	<!-- 게시물에 대한 맵 -->
+	<resultMap type="Board" id="boardMap">
+	   <result column="no" property="no"/>
+	   <result column="title" property="title"/>
+	   <result column="writer" property="writer"/>
+	   <result column="content" property="content"/>
+	   <result column="reg_date" property="regDate"/>
+	   <collection property="commentList" column="no" select="selectCommentList2ByNo"></collection>
+	</resultMap>
+	
+	<!-- 댓글에 대한 맵 -->
+	<resultMap type="Comment" id="commentMap">
+	   <result column="comment_no" property="commentNo"/>
+	   <result column="no" property="no"/>
+	   <result column="writer" property="writer"/>
+	   <result column="content" property="content"/>
+	   <result column="reg_date" property="regDate"/>
+	</resultMap>
+	
+	<!-- 게시글  전체를 갖고올거라 파라미터 X-->
+	<select id="selectBoardList1" resultMap="boardMap">
+	     select *
+	       from tb_mybatis_board
+	      order by no desc  
+	
+	</select>
+	<!-- 댓글 -->
+	<select id="selectCommentList1" resultMap="commentMap">
+	       select *
+	         from tb_mybatis_comment
+	        order by comment_no 
+	</select>
+	
+<!--  -->	
+	<select id="selectCommentList2ByNo" parameterType="int" resultMap="commentMap">
+	       select *
+	         from tb_mybatis_comment
+	        where no = #{no}
+	</select>
+	
+	
+	
+	
+
+
+   
+</mapper>	
+
+
+
+
+
+
+
+
+
+
+
+
+
+

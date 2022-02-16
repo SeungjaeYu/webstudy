@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title><%= title %></title>
+    </head>
+    <body>
+        <h2>ejs - template</h2>
+        <table>
+            <tr>
+                <td>번호</td>
+                <td>제목</td>
+                <td>작성자</td>
+            </tr>
+            <%
+            for (let i = 0; i < arr.length; i++) {
+            %>
+                <tr>
+                    <td>번호 <%= arr[i] %></td>
+                    <td>제목 <%= arr[i] %></td>
+                    <td>작성자 <%= arr[i %></td>
+                </tr>
+            <%    
+            }
+            %>
+        </table>
+    </body>
+</html>

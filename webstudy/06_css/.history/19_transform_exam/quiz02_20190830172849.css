@@ -1,0 +1,21 @@
+button {
+    display: inline-block;
+    margin: 150px;
+    width: 150px;
+    height: 150px;
+    position: relative;
+
+}
+
+
+
+button::after {
+    content: url("../images/spinner.jpg");
+    left: 36px;
+    bottom: 33px;
+    position: absolute;
+}
+
+@keyframes ff {
+    
+}

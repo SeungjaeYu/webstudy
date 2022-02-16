@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!-- 
+order(flex item의 순서 제어) 
+- 설정하지 않으면 0이 설정
+- 낮은 숫자에서 높은 숫자로 배치
+
+order: 숫자 배치(음수 가능)
+ -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="style.css">
+<style>
+	.flex-container{
+		display: flex;
+	}
+
+	.flex-container >:nth-child(3){
+		order: 1;
+	}
+	.flex-container >:nth-child(4){
+		order: -1;
+	}
+</style>	
+</head>
+<body>
+	<div class="container">
+		<h2>order: 기본(0), 숫자</h2>
+		<div class="flex-container">
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>4</div>
+			<div>5</div>
+		</div>
+	</div>
+</body>
+</html>

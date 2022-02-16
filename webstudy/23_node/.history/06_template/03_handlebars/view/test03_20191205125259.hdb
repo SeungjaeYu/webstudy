@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>handlebars 연습</title>
+    </head>
+    <body>
+        <h2>{{title}}</h2>
+        <div>
+            <h2>제목 : {{body.title}} </h2>
+            <h2>내용 : {{body.content}} </h2>
+        </div>
+        <div>
+            {{#with body}}
+            <h2>제목 : {{title}} </h2>
+            <h2>내용 : {{body.content}} </h2>
+            {{/with}}
+        </div>
+    </body>
+</html>

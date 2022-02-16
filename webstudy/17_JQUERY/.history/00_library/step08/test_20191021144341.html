@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!-- 
+	CSS 속성 기능 추가하기	
+	<div style="width: 200px; height: 100px"></div>
+	div.style.width = ...
+	div.style.height = ...
+	div.style[height] = ...
+-->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="jquery.js"></script>
+</head>
+<body>
+	<button id="btn1">설정하기</button>
+	<button id="btn2">가져오기</button>
+	
+	<div>CSS 라이브러리 추가...</div>
+	
+	<script>	
+		$("#btn1").on("click", () => {
+			$("div").css({
+				"background": "tomato",
+				 "color": "white"
+				});
+		});
+		$("#btn2").on("click", () => {
+
+		});
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

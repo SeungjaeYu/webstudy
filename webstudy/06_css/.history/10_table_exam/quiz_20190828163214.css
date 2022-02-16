@@ -1,0 +1,23 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 1000px;
+  margin: 30px auto;
+  text-align: center;
+}
+
+.table tr{
+  border: 1px solid rgb(227, 229, 231);
+}
+/*
+.table th, .table td{
+  border: 1px solid rgb(255, 255, 255);
+}
+*/
+.table {
+  border-collapse: collapse;
+		margin: 30px auto;
+    width: 80%;
+}

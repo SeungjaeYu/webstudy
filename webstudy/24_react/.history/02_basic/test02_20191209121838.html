@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@16/umd/reac t.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+</head>
+<body>
+    <div id="container"></div>
+    <script>
+        // 클래스 컴포넌트 이용하기 ==> extends React.Component
+        /*
+        class LikeButton extends React.Component {
+            // render 메서드 필수
+            render() {
+                return React.createElement("button", null, "Like");
+            }
+        }
+        ReactDOM.render(
+            React.createElement(LikeButton),
+            document.querySelector("#container")
+        )
+        */
+        // <div><button></button></div>
+        class LikeButton extends React.Component {
+            // render 메서드 필수
+            render() {
+                return React.createElement("button", null, "Like");
+            }
+        }
+        class 
+        ReactDOM.render(
+            React.createElement(LikeButton),
+            document.querySelector("#container")
+        )
+    </script>
+</body>
+</html>

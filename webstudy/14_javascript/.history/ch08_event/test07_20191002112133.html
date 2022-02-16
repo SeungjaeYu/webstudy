@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            border: 3px solid #345;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>이벤트 전파 이해하기</h2>
+    <div id="outer">
+        <div id="inner">
+            <div id="child">
+                이벤트 전파 테스트
+            </div>
+        </div>
+    </div>
+    <div id="debug"></div>
+    <script>
+        let d = document.getElementById("debug");
+
+        let outer = document.getElementById("outer");
+        let inner = document.getElementById("inner");
+        let child = document.getElementById("child");
+        outer.addEventListener("click", (e) => {
+            print("outer");
+        });
+        inner.addEventListener("click", (e) => {
+            print("inner")
+        });
+        child.addEventListener("click", (e) => {});
+        /*
+        print("outer");
+        print("inner");
+        print("child");
+        */
+
+
+
+        function print(msg) {
+            d.innerHTML += msg + "<br />";
+
+        }
+    </script>
+</body>
+</html>

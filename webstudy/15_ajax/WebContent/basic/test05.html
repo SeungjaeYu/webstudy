@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<body>
+	<h2>요청방식과 파라미터</h2>	
+	<button id="btn1">GET</button>
+	<button id="btn2">POST</button>
+	<hr />
+	<div id="result"></div>
+	
+	<script>
+		let btn1 = document.getElementById("btn1");
+		let btn2 = document.getElementById("btn2");
+		btn1.addEventListener("click", () => {
+			// GET 방식 호출
+			let xhr = new XMLHttpRequest();
+			xhr.onreadystatechange = () => {
+				if (xhr.readyState == 4) {
+					if (xhr.status == 200) {
+						let result = document.getElementById("result");
+						result.innerHTML = xhr.responseText;
+					}	
+				}
+			};
+			xhr.open("GET", "test05.do?msg=hello", true);
+			xhr.send();
+		});
+		
+		btn2.addEventListener("click", () => {
+			// POST 방식 호출
+			let xhr = new XMLHttpRequest();
+			xhr.onreadystatechange = () => {
+				if (xhr.readyState == 4) {
+					if (xhr.status == 200) {
+						let result = document.getElementById("result");
+						result.innerHTML = xhr.responseText;
+					}	
+				}
+			};
+			// POST 방식의 요청일 경우 파라미터를 send 메서드의 매개변수에 설정.
+			// 헤더설정이 필요함
+			xhr.open("POST", "test05.do", true);
+			
+			// 설정이 없는 경우 파라미터가 전송되지 않는다.
+			xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+			
+			xhr.send("msg=hello");	
+		});
+		
+		
+		
+		
+	</script>
+	
+	<form enctype="application/x-www-form-urlencoded">
+	</form>
+</body>
+</html>

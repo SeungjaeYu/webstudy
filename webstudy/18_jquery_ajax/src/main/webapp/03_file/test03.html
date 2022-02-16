@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--
+	1 - form 플러그인 사용하기
+	2 - FormData 객체 이용 
+ -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="http://malsup.github.com/jquery.form.js"></script>
+</head>
+<body>
+	<form id="fileForm" action="/18_jquery_ajax/file/test01.do" method="post" enctype="multipart/form-data">
+		<input type="text" id="msg" name="msg" /><br>
+		<input type="file" name="attach" multiple="multiple"/><br>
+		<button>업로드</button>
+	</form>
+	<div id="result"></div>
+    <script>
+    	$("#fileForm").ajaxForm({
+    		beforeSubmit: () => {
+    			if ($("#msg").val() === "") {
+    				alert("메세지를 입력하세요.");
+	    			return false;
+    			}
+    		},
+    		success: (result) => {
+    			$("#result").html(result);
+    		},
+    		error: () => alert("오류")
+    	});
+    </script>
+</body>
+</html>

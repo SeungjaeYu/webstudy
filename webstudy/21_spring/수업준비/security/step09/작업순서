@@ -1,0 +1,85 @@
+- 회원가입 기능 구현하기
+
+
+1. TestController 메서드 추가하기
+
+	@Autowired
+	private MemberServiceImpl service;
+	
+	@RequestMapping("/join-form.do")
+	public String joinForm() {
+		return "security/joinForm";
+	}
+	
+	@RequestMapping("/join.do")
+	public String join(Member member) {
+		service.join(member);
+		return "redirect:/security/main.do";
+	}
+
+	
+2. 	joinForm.jsp 작성하기
+
+	<h2>회원가입</h2>
+	<form method='post' action="<c:url value="/security/join.do" />">
+		<div>
+			<label>아이디 : </label>
+			<input type='text' name='id' value='aaa'></div>
+		<div>
+			<label>패스워드 : </label>
+			<input type='password' name='password' value='1111'>
+		</div>
+		<div>
+			<label>이름 : </label>
+			<input type='text' name='name' value='홍길동'>
+		</div>
+		<div>
+			<button>가입</button>
+		</div>
+	</form>	
+
+	
+3. MemberServiceImpl 클래스 추가하기	
+	@Service
+	public class MemberServiceImpl {
+	
+		@Autowired
+		private MemberMapper mapper;
+	
+		@Autowired
+		private PasswordEncoder encoder;
+		
+		public void join(Member member) {
+			member.setPassword(encoder.encode(member.getPassword()));
+			mapper.insertMember(member);
+			Auth auth = new Auth();
+			auth.setId(member.getId());
+			auth.setAuth("ROLE_U");
+			mapper.insertMemberAuth(auth);
+		} 
+	}
+	
+	
+4.  MemberMapper 메서드 추가하기	
+	void insertMember(Member member);	
+	void insertMemberAuth(Auth auth);	
+	
+	
+5.  xml
+  	<insert id="insertMember" parameterType="member">
+	    insert into tb_security_member(id, password, name) values(#{id}, #{password}, #{name})
+	</insert>	
+	
+	<insert id="insertMemberAuth" parameterType="auth">
+	    insert into tb_security_member_auth(id, auth) values(#{id}, #{auth})
+	</insert>
+	
+	
+6.  메인페이지 링크추가	
+	<sec:authorize access="isAnonymous()">
+		<a href="<c:url value="/security/login-form.do" />">로그인</a>		
+		<a href="<c:url value="/security/join-form.do" />">회원가입</a>		
+	</sec:authorize>	
+	
+	
+7.  테스트 진행하기	

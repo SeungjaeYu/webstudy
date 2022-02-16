@@ -1,0 +1,6 @@
+function doStart() {
+    
+}
+function doClick() {
+
+}
