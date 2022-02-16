@@ -1,0 +1,17 @@
+.card {
+    width: 600px;
+    height: 100px;
+    border: 1px solid;
+}
+.card__thumb {
+    width: 125px;
+    height: 101px;
+    display: inline-block;
+}
+.card__body {
+    width: 300px;
+    display: inline-block;
+}
+.card__thumb__img {
+    border-radius: 100%;
+}

@@ -1,0 +1,28 @@
+.container {
+    background-color: darkgray;
+    width: 1000px;
+    height: 300px;
+    padding-left: 80px;
+    padding-right: 80px;
+    box-sizing: border-box;
+}
+.container > div, .container > span {
+    width: 100px;
+    height: 100px;
+    border: 2px dashed;
+    display: inline-block;
+    margin-left: auto;
+    margin-left: auto;
+    text-align: center;
+    line-height: 100px;
+}
+.container > div:hover, .container > span:hover {
+    background-color: black;
+    color: white; 
+}
+h2 {
+    text-align: center;
+    border-bottom-style: solid;
+    border-bottom-color: orange;
+}
+

@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 독타입.. 중복이여서는 안된다 -->
+<!--파일을 고유하게 이름짓는 것 namespace testMapper1의 이름을 줘야한다 패키지명 같이 줘야한다  -->
+<mapper namespace="kr.co.mlec.dao.TestMapper1">  
+<!--           id : 여러 개의 셀렉절이 나올텐데 그걸 구분하기 위해서 id를 써준다 
+    parameterType : where절의 #{파라미터 값을}  주는데  id니까 string을 써준다
+       resultType : 결과값을 받기위한 타입 멤버로 받아야한다 여기서는  -->
+       
+   <select id = "selectMemberInfo1" 
+           parameterType="string" 
+           resultType="Member"> 
+    select id,
+           name,
+           addr,
+           email
+      from tb_mybatis_member
+     where id = #{id}       <!-- {파라미터} 이 들어가야 한다 dao쪽에서 줘야한다 -->
+    </select>
+    
+           <!-- 파라미터타입이 여러 개 들어올 때 VO타입의 객체 -->
+   <select id = "selectMemberInfo2" 
+           parameterType="Member" 
+           resultType="Member"> 
+           
+    select id,
+           name,
+           addr,
+           email
+      from tb_mybatis_member
+     where id = #{id} 
+       and name = #{name}      
+      <!-- 여러개의 값을 담을 때는 map이나 VO 를 사용한다. VO 권장 -->
+    </select>
+      
+    
+    <select id = "selectMemberInfo3"
+            parameterType = "string"
+            resultType = "string">    
+    select name
+      from tb_mybatis_member
+     where id = #{id}
+    </select>
+         
+    
+    
+    
+    <select id = "selectMemberInfo4"
+            resultType = "int">    
+    select count(*)
+      from tb_mybatis_member         
+    </select>
+    
+    
+    <select id = "selectMemberList1" 
+            resultType = "Member">    
+    select id,
+           name,
+           email,
+           addr,
+           join_date as joinDate
+      from tb_mybatis_member
+     order by id         
+    </select>
+    
+    
+    <select id = "selectMemberList2" 
+            resultType = "String">    
+    select name
+      from tb_mybatis_member
+     order by id         
+    </select>
+    
+<!--select * 하고싶은데 _ 언더바가 있는 컬럼명이 있어서 가져올 수 없다 매번 알리아스를 줄 수 없다-->
+<!--SQL의 결과와 VO를 결합 : <resultMap type = "어떤 VO로 묶을지" id = "">-->
+    <resultMap type="Member" id="memberMap">
+           <result column="id" property = "id" />
+           <result column="name" property = "name" />
+           <result column="addr" property = "addr" />
+           <result column="email" property = "email" />
+           <result column="join_date" property = "joinDate" />
+    </resultMap>
+
+    <select id = "selectMemberList3" 
+            resultMap = "memberMap">    
+    select *
+      from tb_mybatis_member
+     order by id         
+    </select>
+    
+<!-- insert , update.. -->
+    <insert id = "insertMember1" parameterType="Member">
+     insert into tb_mybatis_member(
+             id, name, email, addr
+             ) values(
+             #{id}, #{name}, #{email}, #{addr}
+             ) 
+         
+    
+    </insert>
+    
+    
+    
+    <update id="updateMember" parameterType="Member">
+    update tb_mybatis_member
+       set addr = #{addr},
+           email = #{email}
+     where id = #{id}      
+    
+    
+    
+    </update>
+    
+    
+    
+    <delete id="deleteMember" parameterType="String">
+    delete 
+      from tb_mybatis_member
+     where id = #{id} 
+    
+    
+    </delete>
+    
+    <select id="selectMemberIteratorList" parameterType="Member" resultMap="memberMap">
+      select * 
+        from tb_mybatis_member
+     <!--매번 크기가 바뀌는 타입을 하나에 담아..배열이나 리스트.. -->
+     <!--배열이나 리스트 활용하기 -->
+                <!-- 반복돌리겠다    변수이름 아무거나.. -->
+       where addr in <foreach item="addr" collection="addrs2" open="(" separator="," close=")">
+                       #{addr} 
+                    </foreach>
+    </select>
+     
+    
+    
+      <!--쿼리의 중복된 부분의 처리 -->
+      <sql id="commonMember">
+          from tb_mybatis_member
+         where addr like '%e%'  
+      </sql>
+      
+      
+      <select id="selectMemberIncludeList" resultMap="memberMap">
+        select *
+        <!--commonMember부르기 -->
+        <include refid="commonMember" />
+        
+      </select>
+      
+      <!--from과 where가 중복된다 쿼리의 중복부분으로 올려줬다-->
+      <select id="selectMemberIncludeListcount" resultType="int">
+        select count(*)
+        <include refid="commonMember" />
+           
+      </select>
+       
+        
+    
+           <!-- 선택박스 검색 처리 부분 파라미터타입 SearchVO에서 갖고온다-->
+           <select id="selectMemberSearchList" parameterType="Search" resultMap="memberMap">  <!--회원이 여러명일테니-->
+            select *
+              from tb_mybatis_member
+           <!-- switch문과 비슷. if는 조건이 하나일때 사용한다-->
+              <choose>
+               <when test="searchType == 'id'">
+                   where id like '%'|| #{searchWord}|| '%' 
+               </when>
+               <when test="searchType == 'name'">
+                   where name like '%'|| #{searchWord}|| '%' 
+               </when>
+<!--                <when test="searchType == 'addr'"> -->
+<!--                    where addr like '%'|| #{searchWord}|| '%'  -->
+<!--                </when>         -->
+               <otherwise>
+                   where addr like '%'|| #{searchWord}|| '%' 
+               </otherwise> 
+               
+               
+              </choose>
+           </select>
+           
+           <!--입력값이 있 없에 따라 조건이 달라지게..                   값을 여러개 담기위해 -->
+           <select id="selectMemberInputList" parameterType ="Member" resultMap="memberMap">
+            select *
+              from tb_mybatis_member
+<!--               where 절 첫번째 조건에 and 가 붙어있어도  알아서 삭제해준다 -->
+              <where>
+              <if test="id != null">
+                   id like '%'|| #{id}|| '%' 
+              </if>
+              <if test="name != null">
+                and name like '%'|| #{name}|| '%' 
+              </if>
+              <if test="addr != null">
+                 and addr like '%'|| #{addr}|| '%' 
+              </if>
+              </where> 
+           
+           </select>
+           
+           
+    
+</mapper>	
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,93 @@
+ch01_basic
+-Test01 : 설명....
+-Test02 : 주석문
+-Test03 : println, print의 차이점 
+-Test04 : \n 줄넘김 문자
+-Test05 : 변수 int 와 String
+-Test06 : 변수를 사용하는 이유
+-Test07 : 문자열과 변수의 결합
+-Test08 : printf에 대해(포맷형태)
+-Test09 : printf활용.(소수점, 빈공간, $)
+-Test10 : 하나의 파일에 여러 개의 클래스를 선언할 때 주의점
+-Test11 : 자바 프로그램 구성요소 이해(클래스, 메서드, 멤버변수)
+-Test12 : 구성요소의 선언 순서
+-Test13 : 상수의 사용법
+-Test14 : 문자열 상수(역슬래시 사용법)
+
+ch01_basic.exam
+-Quiz01
+-Quiz02
+-Quiz03
+-Quiz04
+-Quiz05
+
+ch02_basic
+-Test01 : Random 클래스 활용
+-Test02 : Scanner 클래스
+-Test03 : Scanner를 활용
+-Test04 : Scanner nextInt와 nextLine
+-Test05 : int 문자열로 변경 integer
+-Test06 : swap
+-Test07 : 삼항연산자
+-Test08 : 비교연산자
+-Test09 : 산술연산자(+ - * /)
+-Test10 : 산술연산자(+ - * /)이해
+-Test11 : 증감연산자 ++ --
+-Test12 : 논리 연산자(&&, ||) 앤드와 오어
+-Test13 : 배정연산자 +=, -=, *=...
+
+ch02_basic.exam
+-Quiz01 : Random 수를 입력해서 출력
+-Quiz02 : swap해보기
+-Quiz03 : 랜덤값 두 개를 입력받아 둘 중 큰 수 구하기
+-Quiz04 : 랜덤값을 받아 삼항연산자로 수우미양가
+-Quiz05 : 값을 입력받아 3의 배수 구하기
+-Quiz06 : 두 수를 입력받아 나누고 몫과 나머지
+-Quiz07 : 달러 원화로 환산
+-Quiz08 : 초를 입력받아 시간, 분, 초로 환산
+-Quiz09 : 증감연산자 연습
+-Quiz10 : 1~100까지 랜덤숫자를 받아 짝수이면서 5의 배수 확인(삼항연산자)
+-Quiz11 : 숫자에 따른 사칙연산 (삼항연산자)
+
+
+ch03_condition
+-Test01 : 제어문 if
+-Test02 : 제어문 if 와 삼항연산자 사용
+-Test03 : 제어문 if else
+-Test04 : switch 와 switch case
+
+ch03_condition.exam
+-Quiz01 : if문. 숫자를 입력받아 절대값이 나오게 출력. 
+-Quiz02 : 마트 할인행사. if, else if
+-Quiz03 : 숫자를 입력받아 최대값가 최소값 구하기 if
+-Quiz04 : 세 수를 입력받아 중간값 출력
+-Quiz05 : 랜덤 수를 받아서 봄,여름,가을,겨울 출력. switch, case, break 
+
+ch04_repetition
+-Test01 : 반복 제어문 for
+-Test02 : 1-10까지 숫자가 나오게 반복제어문
+-Test03 : for 인식 범위, 초기화
+-Test04 : 구구단 작성
+-Test05 : while
+-Test06 : while(true) break
+-Test07 : break 이름 사용범
+-Test08 : 반복문의 스킵 continue, continue 이름(반복문에 이름을 줄 수 있다)
+
+
+
+
+
+ch06_array
+-Test01 : 
+-Test02 :
+-Test03 : 
+-Test04 : 
+-Test05 : 
+-Test06 : 배열의 요소 확인1.4버전 1.5버전 for문
+-Test07 : 배열의 복사 얕은복사 , 깊은복사
+-Test08 : 다차원배열
+
+
+
+
+

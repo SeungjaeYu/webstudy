@@ -1,0 +1,3 @@
+val = int(input())
+
+for 

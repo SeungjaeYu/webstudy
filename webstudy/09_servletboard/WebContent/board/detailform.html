@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h2>자유게시판</h2>
+	<form action="update.do" method="post">
+		<div>글번호 : <input type="text" name="no" value="#no"/> 작성자 : <input type="text" name="writer" value="#writer"/> 작성일 : <input type="text" name="regDate" value="#regDate"></div>
+		<div>글제목 : <input type="text" name="title" value="#title"/></div>
+		<div>조회수 : <input type="text" name="viewCnt" value="#viewCnt"/></div>
+		<div>내용 : <textarea name="content">#content</textarea></div>
+		<div>
+			<button type="button" onclick="location.href='updateForm.do?no=#no'">수정</button>
+			<button type="button" onclick="location.href='delete.do?no=#no'">삭제</button>
+		</div>
+	</form>
+</body>
+</html>

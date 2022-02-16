@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>radio, checkbox 파라미터 처리</h2>
+	<form method="post" action="test09.do">
+		<div>
+			<input type="radio" id="sms1" name="sms" value="Y" checked="checked"/>
+			<label for="sms1">수신</label>
+			<input type="radio" id="sms2" name="sms" value="N" />
+			<label for="sms2">수신하지 않음</label>
+		</div>
+		<div>		
+			<input type="checkbox" id="dinner1" name="dinner" value="1" />
+			<label for="dinner1">불백</label>
+			<input type="checkbox" id="dinner2" name="dinner" value="2" />
+			<label for="dinner2">두끼</label>
+			<input type="checkbox" id="dinner3" name="dinner" value="3" />
+			<label for="dinner3">청실홍실</label>
+		</div>
+		<button>전송</button>
+	</form>
+</body>
+</html>

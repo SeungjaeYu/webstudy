@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<!--
+    JSX의 주의사항
+    - 태그는 닫아야 한다.
+    - 여러개의 태그일 경우 부모 태그 필요 - Fragment 사용
+    - 태그에 인라인형식의 스타일 추가시 - 객체 사용
+    - class 속성은 className 으로 지정
+    - 주석 사용
+
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .primary--h2 {
+            color: 'white';
+            background-color: black;
+            font-size: 30px;
+            margin: 30px;
+        }
+    </style>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <!-- Babel을 사용하도록 cdn 링크 가져오기 -->
+    <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+</head>
+<body>
+    <div id="container"></div>
+    <script type="text/babel">
+        /*
+        // br 태그가 닫히지 않아 에러발생함
+        ReactDOM.render(
+            <div>
+                <h1>Hello~</h1>
+                <br>
+                <h1>Hello~</h1>
+            </div>
+            ,
+            document.querySelector("#container")
+        );
+        */
+        /*
+        // 부모 태그가 없어서 에러발생함. 여러개의 태그일 경우 부모 태그가 필요함.
+        ReactDOM.render(
+            <h1>Hello~</h1>
+            <h1>Hello~</h1>
+            ,
+            document.querySelector("#container")
+        );
+        */  
+        /*
+        // 여러개의 태그를 묶는 태그가 불필요 하다면 Fragment를 활용하자..
+        */   
+        ReactDOM.render(
+            <React.Fragment>
+                <h1>Hello~</h1>
+                <h1>Hello~</h1>
+            </React.Fragment>
+            ,
+            document.querySelector("#container")
+        );
+        // React.Fragment를 선언할 때 줄임 문법
+        // 권장은 아님. 도구에 따라 지원이 안되는 경우가 있음
+        /*
+        ReactDOM.render(
+            <>
+                <h1>Hello~</h1>
+                <h1>Hello~</h1>
+            </>
+            ,
+            document.querySelector("#container")
+        );
+        */
+        // style을 작성하기 위해서는 객체를 써야한다.
+        /*
+        ReactDOM.render(
+            <div>
+                <h1>Hello~</h1>
+                <h2 style="color: white; background-color: black; font-size: 30px;">Hello~</h2>
+            </div>
+            ,
+            document.querySelector("#container")
+        );
+        */
+        /*
+        let style = {
+            color: 'white',
+            backgroundColor: 'black',
+            fontSize: '30px',
+            margin: '30px'
+        }
+        ReactDOM.render(
+            <div>
+                <h1>Hello~</h1>
+                <h2 style={style}>Hello~</h2>
+            </div>
+            ,
+            document.querySelector("#container")
+        );
+        */
+        /*
+        ReactDOM.render(
+            <div>
+                <h1>Hello~</h1>
+                <h2 style={{
+                            color: 'white',
+                            backgroundColor: 'black',
+                            fontSize: '30px',
+                            margin: '30px'
+                }}>Hello~</h2>
+            </div>
+            ,
+            document.querySelector("#container")
+        );
+        */
+        ReactDOM.render(
+            <div>
+                <h1>Hello~</h1>
+                <h2 style={{
+                           
+                }}>Hello~</h2>
+            </div>
+            ,
+            document.querySelector("#container")
+        );
+    </script>
+</body>
+</html>

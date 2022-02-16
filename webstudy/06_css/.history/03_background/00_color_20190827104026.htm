@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!-- 
+엘리먼트의 배경색  
+background-color: 값
+
+값에 들어갈수 있는 것들
+
+	1. hex 사용
+	   - 16진수로 표현 : 최소(00), 최대(ff)
+	   - Red, Green, Blue를 표현
+	   - 만약, 동일한 값일 경우 단축 사용 가능(#334455 -> #345)
+	   예> #ff0000 - Red Green Blue, #ff000088 (투명도 지정 - R G B Alpha)
+	
+	2. rgb, rgba 함수 사용
+	   예> rgb(255,0,0), rgba(255,0,0, 0.2) - 0 - 1.0 까지 :  0 투명해짐,  1.0 불투명함
+    
+	3. color 이름
+	   예> red, green, blue, ..
+    
+	4. hsl(hue, saturation, lightness), hsla(hue, saturation, lightness, alpha) 사용
+	   - HSL은 색조, 채도 및 밝기를 의미 
+       - 색조 : 0 ~ 360까지 설정, red, green, blue    
+       - 채도의 %를 0에 가깝게 주게 되면 회색이 적용, 100에 가깝게 주게 되면 원본 색상이 나옴
+	   - 밝기 : 0 - 100%(0 검정, 100 하얀색)
+	   예> hsl(0, 100%, 25%), hsl(0, 100%, 25%, .5)
+ -->
+<html>
+<head>
+	<title>엘리먼트 배경색</title>
+	<meta charset="utf-8">
+	<style>
+
+	</style>
+</head>
+<body>
+	<h1>배경색 바꾸기(background-color)</h1>
+	<h2>색상 적용하기</h2>
+	<div class="color-name">
+		CSS 가 적용된 DIV 태그 입니다.
+		<p>CSS 가 적용된 P 태그 입니다.</p>
+	</div>
+
+	<div class="hsl-color">
+		<h1>hsl을 이용한 색상 표현</h1>
+	</div>
+</body>
+</html>

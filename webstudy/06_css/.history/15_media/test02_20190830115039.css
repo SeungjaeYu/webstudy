@@ -1,0 +1,8 @@
+body {
+    background: white;
+}
+
+.container >div:nth-child(1) { 
+    
+ }
+.container >div:nth-child(2) { }

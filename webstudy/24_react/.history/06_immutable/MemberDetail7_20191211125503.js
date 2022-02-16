@@ -1,0 +1,1 @@
+class MemberDetail extends React.Com

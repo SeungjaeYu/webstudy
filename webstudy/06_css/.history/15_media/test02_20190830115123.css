@@ -1,0 +1,6 @@
+body {
+    background: white;
+}
+
+.container > div:nth-child(1) { background: #cc6767; }
+.container > div:nth-child(2) { background: #67 }

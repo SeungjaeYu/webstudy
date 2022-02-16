@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        form 엘리먼트 이해하기
+        - 사용자가 입력한 데이터를 전송하기 위해서 필요
+        - 
+    -->
+    <h2>Form 엘리먼트</h2>
+
+    <!--
+        form 엘리먼트
+        - 사용자의 입력값을 처리하기 위한 엘리먼트
+        - 화면에서 입력한 값을 서버에 전송한다.
+
+        form의 속성
+        - action : 입력한 값을 처리할 서버의 주소
+        - method : get(입력한 값이 url에 붙어 간다.)
+                 : post 설정(입력한 값이 body에 붙어 간다, url 에 확인 불가능)
+        
+        // 처리할 페이지
+        https://search.naver.com/search.naver
+        // 쿼리스트링, 파라미터 : 처리에 필요한 데이터
+        ?sm=top_hty
+        &fbm=0
+        &ie=utf8
+        &query=java
+    -->
+    <form action="a.do" method="get">
+        <!-- 페이지에서 처리할 데이터를 입력받는다. -->
+        <!-- 사용자 입력을 위한 태그
+            (***name 속성을 이용해서 이름을 지정해야만 서버로 전송된다.***)
+            - input
+            - select
+            - textarea
+        -->
+        <h2>테스트</h2>
+        <!--
+            input 태그는 type 속성을 이용해서 사용자에게
+            입력받는 형식을 지정할수 있다.
+
+            type = text
+            - 한줄 내용 입력받을 때 사용
+            - 예> 이름, 주소, 제목, ...
+        -->
+        <div>
+            text : <input type="text" name="msg" />
+        </div>
+        <div>
+            <!--
+                type = password
+                - 암호화된 형태로 보이게 된다.
+            -->
+            password : <input type="password" name="pass" />
+        </div>
+
+        <div>
+            <!--
+                type = checkbox
+                - 다중 체크시 활용
+                - 사각형 모양의 체크할 수 있는 UI 제공
+                - 서버에서 선택한 값을 찾기 위해서
+                  value 속성을 지정해서 보낸다.
+                - 사용자가 선택하지 않으면 아무런 값도
+                  전송하지 않는다.
+            -->
+            checkbox :
+            <input type="checkbox" name="food" value="1" />라면
+            <input type="checkbox" name="food" value="2"checked />빵
+            <input type="checkbox" name="food" value="3" checked />떡볶이
+            <input type="checkbox" name="food" value="4" />순대
+        </div>
+
+        <div>
+            <!--
+                type = radio
+                - 여러개 중에서 하나는 선택
+                - 동그형 모양의 체크할 수 있는 UI 제공
+                - name속성의 값이 같은 것 중에서 하나만 선택 가능
+                - 서버에서 선택한 값을 찾기 위해서 value 속성을 지정해서 보낸다.
+            -->
+            radio :
+            <input type="radio" name="sms" value="1"/>수신
+            <input type="radio" name="sms" value="2" checked/>수신하지 않음
+        </div>
+        <!-- a.do?msg=a&pass=1&food=4&sms=2 -->
+
+        <div>
+            <!--
+                type = "file"
+                사용자 시스템에 있는 파일을 선택할 수 있게 한다.
+            -->
+            file : <input type="file" name="attach" />
+        </div>
+
+        <div>
+            <!--
+                select 엘리먼트
+                option : 아이템과 같이 사용
+                option 엘리먼트에 selected 를 설정하면
+                해당 아이템이 선택된 상태로 보여진다.
+            -->
+            select :
+            <select name="area">
+                <option value="1">서울</option>
+                <option value="2">대구</option>
+                <option value="3" selected>부산</option>
+            </select>
+
+        </div>
+
+        <div>
+            <!--
+                textarea 엘리먼트
+
+                여러줄의 텍스트를 입력
+            -->
+            <textarea>
+
+            </textarea>
+        </div>
+        <div>
+            <!--
+                submit 버튼은 자신을 담고 있는 폼의 입력
+                정보를 form 태그의 action 속성에 지정된
+                페이지로 전송한다.
+                - value을 이용하여 버튼의 라벨을 변경한다.
+            -->
+            <input type="submit" value="등록">
+            
+            <!--
+                type="reset"
+                - 사용자 입력값을 화면의 초기 상태로 되돌린다.
+            -->
+            <input type="reset" value="재작성">
+
+            <!--    
+                type="button"
+                - 어떠한 동작도 등록되어 있지 않다.
+                - 사용자가 동작을 정의해서 사용한다.
+                - 자바스크립트를 이용해서 동작을 등록
+            -->
+            <input type="button" value="확인" onclick="alert('버튼 클릭됨');">
+
+        </div>
+
+        <div>
+            <!--
+                Button 을 이용한 submit, reset, button 대체
+                - type을 설정하지 않으면
+                  type="submit"이 디폴트로 적용된다.
+            -->
+            <button type="submit">등록</button>
+            <button type="reset">재작성</button>
+            <button type="button" onclick="alert('클릭됨');">확인</button>
+        </div>
+
+    </form>
+</body>
+</html>

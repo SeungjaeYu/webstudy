@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Member(id, name) {
+            this.id = id;
+            this.name = name;
+        }
+        Member.prototype = {
+            setId: function (id) { this.id = id; },
+            getId: function (id) { return this.id; },
+            setId: function (id) { this.id = id; },
+            setId: function (id) { this.id = id; },
+
+        }
+
+
+        Member.prototype.setId = function (id) {
+            this.id = id;
+        }
+        Member.prototype.getId = function () {
+            return this.id;
+        }
+        Member.prototype.setName = function(name) {
+            this.name = name;
+        }
+        Member.prototype.getName = function() {
+            return this.name;
+        }
+
+    </script>
+</body>
+</html>

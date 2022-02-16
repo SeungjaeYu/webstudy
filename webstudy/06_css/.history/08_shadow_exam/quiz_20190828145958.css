@@ -1,0 +1,11 @@
+.card {
+    width: 250px;
+    height: 300px;
+}
+.card__thumb {
+    width: 50px;
+    
+}
+.card__body {
+    width: 200px;
+}

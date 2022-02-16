@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>애니메이션</title>
+	<meta charset="utf-8">
+    <style>
+        div {
+            width: 50px; height: 50px;
+            background-color: orange;
+			position: relative;
+        }
+		button {
+			margin: 5px;
+			font-size: 20px;
+			height: 50px;
+			background: tomato;
+			color: white;
+			border: 1px solid black;
+		}          
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    <button>시작</button>	
+    <button>stop</button>
+    <button>clearQueue</button>
+    <button>finish</button>
+    <div></div>
+    <script>
+        $("button:eq(0)").click(() => {
+            $("div").animate({left : 500}, 3000)
+                    .animate({top : 300}, 3000)
+                    .animate({width : 300}, 3000);
+        });
+        $("button:eq(1)").click(() => {
+            // $("div").stop();
+            // $("div").stop(false, false);
+            //$("div").stop(false, true);
+            // $("div").stop(true, false);
+            $("div").stop(true, false);
+        });
+        $("button:eq(2)").click(() => {
+            $("div").clearQueue();
+        });
+        $("button:eq(3)").click(() => {
+            $("div").finish();
+        });
+    /*
+        stop() : 현재 실행중인 효과는 즉시 중단
+        stop(clearQueue, jumpToEnd) : true, false 설정  // jumpToEnd = 현재 진행중인 효과가 끝난 상태로 감
+        clearQueue() : 현재 실행중인 효과는 진행하고 나머지는 삭제
+        finish() : 모든 효과 종료하고 요소를 효과가 완료된 상태로 변경
+    */
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

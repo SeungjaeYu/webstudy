@@ -1,0 +1,78 @@
+스프링 시큐리티 설정 적용하기
+
+1. pom.xml - security 관련 라이브러리 추가하기
+
+	<dependency>
+	    <groupId>org.springframework.security</groupId>
+	    <artifactId>spring-security-web</artifactId>
+	    <version>${spring-framework.version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.springframework.security</groupId>
+	    <artifactId>spring-security-config</artifactId>
+	    <version>${spring-framework.version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.springframework.security</groupId>
+	    <artifactId>spring-security-core</artifactId>
+	    <version>${spring-framework.version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.springframework.security</groupId>
+	    <artifactId>spring-security-taglibs</artifactId>
+	    <version>${spring-framework.version}</version>
+	</dependency>
+	
+	
+2.  project 하위 /src/main/resources/config/spring/spring-security.xml
+    spring-security.xml 파일 작성	
+
+	<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:security="http://www.springframework.org/schema/security"
+		xsi:schemaLocation="http://www.springframework.org/schema/security 
+							http://www.springframework.org/schema/security/spring-security.xsd
+							http://www.springframework.org/schema/beans 
+							http://www.springframework.org/schema/beans/spring-beans.xsd">
+		<security:http>
+			<security:form-login />
+		</security:http>				
+		<security:authentication-manager></security:authentication-manager>					
+	</beans>
+
+	
+3. web.xml - security 설정파일 로드, 필터 적용
+   아래의 필터클래스 설정 후 
+   org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'springSecurityFilterChain' available
+   에러 발생은 위의 spring-security.xml 파일의 기본 설정이 없을 경우 발생함..
+   
+	<servlet>
+		<servlet-name>dispatcher</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>classpath:config/spring/spring-*.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<filter>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	
+4. 서버 구동 테스트 : 에러발생하지 않는지 확인한다.
+
+	에러발생 - 설정파일이 올바르게 인식되지 않은 경우 에러발생
+	classpath:config/spring/spring-*.xml
+	
+5. 서버 종료	

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!--
+    select 객체 사용하기
+
+    select객체.selectedIndex : 선택된 위치
+    select객체.selectedIndex = 숫자;    // 숫자 위치 선택하게 한다.
+    select객체.options : option 항목들의 배열
+
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form name="mForm">
+        <div>
+            <select name="search">
+                <option>선택</option>
+                <option>작성자</option>
+                <option>제목</option>
+                <option>제목+작성자</option>
+            </select>
+            <button type="button" onclick="doSearch()">검색</button>
+        </div>
+    </form>
+    <script>
+        function doSearch() {
+            let f = document.mForm;
+            f.search
+        }
+    </script>
+
+</body>
+</html>

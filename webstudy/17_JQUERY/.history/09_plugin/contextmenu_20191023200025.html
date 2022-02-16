@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>이벤트</title>
+	<meta charset="utf-8">
+    <style>
+        /* div {
+            margin: 10px; padding: 5px;
+            border: 3px solid black;
+            height: 200px;
+        } */
+        input {
+            position: absolute;
+            width: 98%;
+            border: 0px solid white;
+            height: 30px;
+            font-size: 23px;
+        }
+
+
+        .menu {
+            width: 120px;
+            box-shadow: 0 4px 5px 3px rgba(0, 0, 0, 0.2);
+            position: relative;
+            display: none;
+        }
+        .menu-options {
+            list-style: none;
+            padding: 10px 0;
+        }    
+        .menu-option {
+        font-weight: 500;
+        font-size: 14px;
+        padding: 10px 40px 10px 20px;
+        cursor: pointer;
+        }
+
+        .menu > ul > li:hover {
+            background: rgba(0, 0, 0, 0.2);
+        }
+    
+        
+
+
+
+
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gojs/2.0.5/go.js"></script>
+</head>
+<body>
+    <!-- <div>마우스 오른쪽 클릭</div> -->
+    <div><input type="text" value="오늘은 비가 오네요~aaaa"></div>
+    
+
+
+    <div class="menu">
+            <ul class="menu-options">
+              <li class="menu-option">복사</li>
+              <li class="menu-option">붙여넣기</li>
+            </ul>
+    </div>
+
+    <script>
+        $(document).on("contextmenu", e => {
+            
+            e.preventDefault();
+           
+            let origin = {
+                left: e.clientX,
+                top: e.clientY
+            };
+            setPosition(origin);
+            // if(menuVisible)toggleMenu("hide");
+            return false;
+        });
+        
+
+
+const menu = $(".menu")[0];
+let menuVisible = false;
+
+let toggleMenu = command => {
+  menu.style.display = command === "show" ? "block" : "none";
+  
+  menuVisible = !menuVisible;
+};
+
+let setPosition = (origin) => {
+  menu.style.left = origin.left + "px";
+  menu.style.top = origin.top + "px";
+  toggleMenu("show");
+};
+
+
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,6 @@
+
+
+@media (max-width)
+.container {
+    display: grid;
+}

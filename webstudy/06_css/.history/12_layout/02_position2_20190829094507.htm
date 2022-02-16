@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!-- 
+    relative
+    - 자신의 원래 들어가야할 위치 기준으로 설정
+    - 자신의 엘리먼트 영역은 확보된 상태로 이후 엘리먼트들이 추가
+ -->
+<html lang="en">
+<head>
+<title> position </title>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="./01_position.css">
+<style type="text/css">
+    .pos1{
+        position:relative;
+        top : 10px;
+        left: 10px;
+    }
+    .pos2{
+        position:relative;
+        top : 30px;
+        left: 30px;
+        
+    }
+    .pos3{
+        position:relative;
+        top : 0px;
+        left: -10px;
+
+    }
+</style>
+</head>
+<body>
+    <h1>위</h1>
+    <div class="parent">
+        <div class="pos1">1</div>
+        <div class="pos2">2</div>
+        <div class="pos3">3</div>
+    </div>
+    <h1>아래</h1>
+</body>
+</html>
+
+
+
+
+
+
+

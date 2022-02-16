@@ -1,0 +1,19 @@
+div {
+    background-color: darkgrey;
+}
+
+.sticky {
+    width: 100px;
+    height: 100px;
+}
+
+.sticky:nth-child(3n + 1) {
+    background-color: #fcfbcd;
+}
+.sticky:nth-child(3n + 2) {
+    background-color: #da3ed2;
+}
+.sticky:nth-child(3n) {
+    background-color: #e68be1;
+}
+

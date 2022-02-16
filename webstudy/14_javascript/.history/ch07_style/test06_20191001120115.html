@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        <button onclick="sizeUp()">크게</button>
+        <button onclick="sizeDown()">작게</button>
+    </p>
+    <div>
+        <p>
+            도굴범<br />
+            우연히 과거로 회귀한 도굴범
+        </p>
+    </div>
+    <script>
+        function sizeUp() {
+            let divEle = document.querySelector("div");
+            document.defaultView.getComputedStyle(divEle).fontSize = 
+            parseInt(document.defaultView.getComputedStyle(divEle).fontSize) + 2 + "px";
+        }
+        function sizeDown() {}
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 독타입.. 중복이여서는 안된다 -->
+<!--파일을 고유하게 이름짓는 것 namespace testMapper1의 이름을 줘야한다 패키지명 같이 줘야한다  -->
+<!-- dao 클래스 위치 ctrl 키 눌러서 경로 확인되는지 .. check-->
+<mapper namespace="kr.co.mlec.repository.dao.CommentDAO">  
+     <!-- regDate는 못갖고오니까 리절트맵 만들어주기 -->
+     <resultMap type="Comment" id="commentMap">
+       <result column="comment_no" property="commentNo"/>
+       <result column="no" property="no"/>
+       <result column="writer" property="writer"/>
+       <result column="content" property="content"/>
+       <result column="reg_date" property="regDate"/>
+     </resultMap>
+     
+     <!-- 댓글 전체 -->
+     <select id="selectComment" parameterType="int" resultMap="commentMap" flushCache="true" useCache="true">
+      	     select * 
+			   from  tb_comment 
+			  where no = #{no} 
+			  order by  comment_no desc
+     </select>
+     
+
+     
+
+     <!-- 댓글쓰기 -->
+     <select id="insertComment" parameterType="Comment">
+        insert into tb_comment( comment_no, no, writer, content  ) 
+					values(comment_no_seq.nextval, #{no}, #{writer}, #{content} )
+	 </select>
+           
+     <!-- 글수정 -->
+     <update id="updateComment" parameterType="Comment">
+     update tb_comment 
+        set content = #{content} 
+      where no = #{no}
+        and comment_no = #{commentNo}
+	 </update>
+           
+      <!-- 글삭제 -->     
+     <delete id="deleteComment" parameterType="Comment">
+       delete
+         from tb_comment
+        where no = #{no}      
+          and comment_no = #{commentNo} 
+	 </delete>
+	 
+	
+</mapper>	
+
+
+
+
+
+
+
+
+
+
+
+
+
+

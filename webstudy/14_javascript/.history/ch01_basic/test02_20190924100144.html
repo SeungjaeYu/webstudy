@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<!--
+    자바스크립트를 외부파일에 저장 후 불러오는 방식
+    - 외부파일의 확장자를 .js 로 생성한다.
+    - 외부파일을 사용하려는 파일에서는 <script src="외부파일의 위치">무시됨..</script> -> @include file의 개념
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h2>외부파일 불러오기</h2>
+    <script src="./test02.js">console.log("무시됨");</script>
+    <script>
+    </script>
+</body>
+</html>

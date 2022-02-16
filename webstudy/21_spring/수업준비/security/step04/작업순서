@@ -1,0 +1,54 @@
+사용자 로그인 폼 사용하기
+
+1.  컨트롤러 로그인폼 url 작성
+   	@RequestMapping("/login-form.do")
+	public String loginForm() {
+		return "security/loginForm";
+	}
+	
+
+2. /WEB-INF/security/loginForm.jsp 작성하기	
+    
+	<h2>로그인</h2>
+	<form method='post' action="<c:url value="/login" />">
+		<div>
+			<label>아이디 : </label>
+			<input type='text' name='username' value='admin'></div>
+		<div>
+			<label>패스워드 : </label>
+			<input type='password' name='password' value='admin'>
+		</div>
+		<div>
+			<button>로그인</button>
+		</div>
+		<%-- 		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" /> --%>
+	</form>
+	
+	
+- csrf 에러 발생(Cross-site request forgery)
+	Forbidden
+	Description The server understood the request but refuses to authorize it.  
+  해결책
+  1. jsp 설정 : <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+  2. xml 설정 : <security:csrf disabled="true" />
+
+
+2. spring-security 내용 변경	
+	
+	<security:http> 
+		<security:csrf disabled="true" />
+		......
+		<security:form-login login-page="/security/login-form.do" />
+	</security:http>	
+   
+   
+3. 테스트 진행하기 : index.jsp 페이지
+
+
+4. 사용자 로그인폼 필드명 변경하기
+	<input type='text' name='userId' value='admin'></div>
+	<security:form-login login-page="/security/login-form.do" username-parameter="userId"/>
+
+
+5. 테스트 진행하기 : index.jsp 페이지
+	

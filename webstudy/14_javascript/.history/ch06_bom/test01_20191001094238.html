@@ -1,0 +1,37 @@
+<!--
+    팝업창 띄우기
+    새창 띄우기 window.open(url, target, option)
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <button onclick="openPop(1)">팝업창1</button>
+        <button onclick="openPop(2)">팝업창2</button>
+        <button onclick="openPop(3)">팝업창3</button>
+        <button onclick="openPop(4)">팝업창4</button>
+    </div>
+    <script>
+        function openPop(type) {
+            switch (type) {
+                case 1: 
+                    window.open("http://www.naver.com", "pop1")
+                break;
+                case 2: 
+                break;
+                case 3: 
+                break;
+                case 4: 
+                break;
+
+            }
+        }
+    </script>
+</body>
+</html>

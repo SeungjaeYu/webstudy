@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!-- 
+	align-self
+	- align-items 속성과 별도로 item의 정렬을 지정
+	- 형식
+	  align-self: auto | flex-start | flex-end | center | stretch
+-->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="style.css">
+<style>
+	.flex-container {
+		width: 800px;
+		display: flex;
+
+		align-items: flex-end;
+	}
+	.flex-container > div:nth-child(3) {
+		align-self: flex-start;
+		align-self: center;
+
+	}
+</style>	
+</head>
+<body>
+	<div class="container">
+		<h2>align-self:  auto | stretch | flex-start | flex-end | center</h2>
+		<div class="flex-container">
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>4</div>
+			<div>5</div>
+		</div>
+	</div>
+</body>
+</html>

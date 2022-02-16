@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--
+    innerHTML 설정하기
+    html(val)
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery.js"></script>
+</head>
+<body>
+    <button id="btn1">1번</button>
+    <button id="btn2">2번</button>
+    <button id="btn3">3번</button>
+
+    <div id="a">아이디 접근</div>
+    <div class="b">클래스 접근</div>
+    <div>태그 접근</div>
+    
+    <script>
+        let btn1 = document.querySelector("#btn1");
+        btn1.addEventListener("click", (e) => {
+            let aDiv = document.querySelector("#a");
+            aDiv.innerHTML = "1번 버튼 클릭됨";
+        });
+        // btn2인 버튼 클릭시 class 속성이 b인 엘리먼트 내용 변경 
+        let btn2 = $("#btn2")[0];
+        btn2.addEventListener("click", (e) =>{
+            let bDiv = $(".b")[0];
+            bDiv.innerHTML = "2번 버튼 클릭됨";
+            let bDiv = $(".b")[0];
+            bDiv.innerHTML = "2번 버튼 클릭됨";
+        });
+
+    </script>
+</body>
+</html>

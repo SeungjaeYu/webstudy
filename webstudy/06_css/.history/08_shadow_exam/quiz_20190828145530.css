@@ -1,0 +1,8 @@
+.card {
+    display: inline-block;
+    width: 250px;
+    height: 300px;
+}
+.card__thumb {
+    display: inline;
+}

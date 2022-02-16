@@ -1,0 +1,11 @@
+html {
+    font-size: 20px;
+}
+body {
+    background: rgb(217, 255, 226);
+    font-size: 20px;
+}
+h2 { font-size: 1rem; padding: 10px; list-style: none; }
+.table td {
+    padding: 20px;
+}

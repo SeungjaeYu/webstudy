@@ -1,0 +1,13 @@
+/**
+ *  객체의 단축 표현 이해하기
+ */
+let id = 'hong';
+let id = 'hong';
+let id = 'hong';
+let member1 = {
+let member1 = {
+let member1 = {
+let member1 = {
+let member1 = {
+
+};

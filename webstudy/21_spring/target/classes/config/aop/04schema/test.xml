@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:aop="http://www.springframework.org/schema/aop"
+	   xmlns:context="http://www.springframework.org/schema/context" 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd
+                           http://www.springframework.org/schema/aop
+                           http://www.springframework.org/schema/aop/spring-aop.xsd">
+                           
+    <context:component-scan base-package="kr.co.mlec.aop._04schema" />
+    <!-- 핵심 기능 클래스 -->                       
+<!-- 	<bean id="board" class="kr.co.mlec.aop._04schema.BoardController" /> -->
+<!-- 	<bean id="member" class="kr.co.mlec.aop._04schema.MemberController" /> -->
+	
+	<!-- 공통 기능 클래스 -->
+	<!-- showLog 메서드 -->
+<!-- 	<bean id="log" class="kr.co.mlec.aop._04schema.LogAspect" /> -->
+<!-- 	<bean id="time" class="kr.co.mlec.aop._04schema.TimeAspect" /> -->
+	
+<!-- 	expression="execution(public * kr.co.mlec.aop._04schema.*Controller.service(..))" /> -->
+<!-- 		execution(public * kr.co.mlec.aop._04schema.*.service(..)) 04_schema 패키지 밑에 모든 클래스 -->
+<!-- 		execution(public * kr.co.mlec.aop._04schema.*.service(..)) aop 패키지 밑과 더 밑의 모든 클래스 -->
+<!-- 		execution(public * kr.co.mlec.aop..Controller+.service(..)) aop 패키지 밑과 더 밑의 컨트롤러의 자식 타입 -->
+<!-- 	    execution(public * kr.co.mlec.aop..service(..)) aop 패키지 밑과 더 밑의 모든 클래스 -->
+<!-- 		execution(public * kr.co.mlec.aop..*(..))" /> -->
+<!-- 		execution(* service(..)) 너무 광범위함-->
+	<aop:config proxy-target-class="true"><!-- (..) => 매개변수 0개 이상 무한대 -->
+		<aop:pointcut id="pCut"
+		expression="execution(public * kr.co.mlec.aop..*Controller.service(..))" />
+		<aop:aspect ref="log">
+			<aop:before method="showLog" pointcut-ref="pCut" />
+		</aop:aspect>
+		
+		<aop:aspect ref="time">
+			<aop:around method="executeTime" pointcut-ref="pCut" />
+		</aop:aspect>
+		
+	</aop:config>	
+     
+</beans>
+
+
+

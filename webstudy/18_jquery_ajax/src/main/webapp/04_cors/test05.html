@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--
+	jsonp 활용하기
+	
+	- jquery를 이용하기 
+ -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    <div>
+    	<button>호출</button>
+    </div>
+    <div id="result"></div>
+    <script>
+    	function call(msg) {
+    		$("#result").html(msg);
+    	}
+    	$("button").click(() => {
+    		// 동적인 스크립트 처리 방식
+    		/*
+    		$.getScript("http://localhost:9080/18_jquery_apiserver/cors/test03.do?callback=call");
+    		*/
+    		/*
+    		$.getJSON(
+    			"http://localhost:9080/18_jquery_apiserver/cors/test03.do?callback=?",
+    			(msg) => {
+    				alert("getJSON 호출 성공");
+    				$("#result").html(msg);
+    			}
+    		);
+    		*/
+    		$.ajax({
+    			url: "http://localhost:9080/18_jquery_apiserver/cors/test03.do",
+    			dataType: "jsonp",
+    			jsonp: "callback",	// callback : jQuery3410018364412722589485_1571971543309
+//     			jsonpCallback: "myCall",	//callback = myCall
+    			success: (msg) => $("#result").html(msg)
+    		});
+    		
+    	});
+    </script>
+</body>
+</html>
