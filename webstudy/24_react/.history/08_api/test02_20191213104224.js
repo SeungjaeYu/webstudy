@@ -1,3 +1,0 @@
-let p = new Promise(() => {
-    
-});

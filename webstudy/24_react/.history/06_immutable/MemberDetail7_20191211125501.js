@@ -1,1 +1,0 @@
-class MemberDetail extends React.

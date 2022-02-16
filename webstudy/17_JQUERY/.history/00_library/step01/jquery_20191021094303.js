@@ -1,3 +1,0 @@
-function mlec(){
-    let elementes = [];
-}

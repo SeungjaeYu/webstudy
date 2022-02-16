@@ -1,4 +1,0 @@
-function doStart() {
-
-}
-function doCl
